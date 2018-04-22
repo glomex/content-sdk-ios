@@ -1,11 +1,10 @@
 internal class VideoFetcher {
-    func fetchVideo(config: ContentConfig, completion: @escaping (Video?) -> ()) {
+    func fetchVideo(config: ContentConfig, completion: @escaping (Video?) -> Void) {
         guard let gitUrl = URL(string: "https://integration-sdk-eu-west-1.dev.mes.glomex.cloud/video?\(config.getAsUrlParams())") else {
             completion(nil)
             return
         }
-        URLSession.shared.dataTask(with: gitUrl) { (data, response
-            , error) in
+        URLSession.shared.dataTask(with: gitUrl) { (data, _, _) in
             guard let data = data else {
                 completion(nil)
                 return

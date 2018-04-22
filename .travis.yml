@@ -4,7 +4,7 @@ language: objective-c
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
-- gem install swiftlint    
+- brew install swiftlint   
 - pod install --project-directory=Example
 
 script:

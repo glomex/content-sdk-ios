@@ -4,9 +4,9 @@ internal class VideoFetcher {
             completion(nil, ContentSdkError.configError)
             return
         }
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
                 guard let data = data else {
-                    completion(nil, ContentSdkError.newrorkError)
+                    completion(nil, error ?? ContentSdkError.newrorkError)
                     return
                 }
                 let decoder = JSONDecoder()

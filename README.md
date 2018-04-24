@@ -1,6 +1,6 @@
 # glomex/content-sdk
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CI Status](http://img.shields.io/travis/mrgerych@gmail.com/glomex.svg?style=flat)](https://travis-ci.org/mrgerych@gmail.com/glomex)
+[![CI Status](http://img.shields.io/travis/glomex/content-sdk-ios.svg?style=flat)](https://travis-ci.org/glomex/content-sdk-ios)
 [![Version](https://img.shields.io/cocoapods/v/glomex.svg?style=flat)](http://cocoapods.org/pods/glomex)
 [![License](https://img.shields.io/cocoapods/l/glomex.svg?style=flat)](http://cocoapods.org/pods/glomex)
 [![Platform](https://img.shields.io/cocoapods/p/glomex.svg?style=flat)](http://cocoapods.org/pods/glomex)

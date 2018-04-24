@@ -7,11 +7,6 @@ env:
   global:
   - FRAMEWORK_NAME=ContentSdk
 
-branches:
-  only:
-  - master
-  - develop
-
 before_install:
 - gem install cocoapods
 - pod repo update

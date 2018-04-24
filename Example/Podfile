@@ -1,5 +1,5 @@
 use_frameworks!
 
 target 'GlomexContentSdk_Example' do
-  pod 'glomex/ContentSdk'
+  pod 'glomex/content-sdk'
 end

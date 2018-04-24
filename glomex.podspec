@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Default'
 
   s.subspec 'Default' do |default|
-    default.dependency 'glomex/ContentSdk'
+    default.dependency 'glomex/content-sdk'
   end
 
-  s.subspec 'ContentSdk' do |contentsdk|
+  s.subspec 'content-sdk' do |contentsdk|
     contentsdk.source_files = 'Sources/**/*'
   end
 end

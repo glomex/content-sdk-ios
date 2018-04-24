@@ -43,15 +43,15 @@ class TableOfContentsSpec: QuickSpec {
             }
 
             it("with network error return error") {
+                let notConnectedError = NSError(domain: NSURLErrorDomain, code: URLError.notConnectedToInternet.rawValue)
                 stub(condition: isHost("integration-sdk-eu-west-1.dev.mes.glomex.cloud")) { _ in
-                    let notConnectedError = NSError(domain: NSURLErrorDomain, code: URLError.notConnectedToInternet.rawValue)
                     return OHHTTPStubsResponse(error: notConnectedError)
                 }
 
                 let expectation = QuickSpec.current.expectation(description: "network call")
                 ContentSdk.load(config: self.config, completion: { (content, error) in
                     expect(content).to(beNil())
-                    expect(error).to(matchError(ContentSdkError.newrorkError))
+                    expect(error).to(matchError(notConnectedError))
                     expectation.fulfill()
                 })
                 QuickSpec.current.waitForExpectations(timeout: 1)

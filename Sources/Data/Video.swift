@@ -1,13 +1,13 @@
-internal struct TrackingFunction: Decodable {
+internal struct TrackingCall: Decodable {
     let method: String
     let url: String
     let payload: [String: String]?
 }
 
 internal struct Tracking: Decodable {
-    let contentBegin: [TrackingFunction]
-    let adBegin: [TrackingFunction]
-    let contentError: [TrackingFunction]
+    let contentBegin: [TrackingCall]
+    let adBegin: [TrackingCall]
+    let contentError: [TrackingCall]
 }
 
 internal struct Video: Decodable {
@@ -18,5 +18,6 @@ internal struct Video: Decodable {
 }
 
 internal struct VideoResponce: Decodable {
-    let video: Video
+    let video: Video?
+    let error: String?
 }

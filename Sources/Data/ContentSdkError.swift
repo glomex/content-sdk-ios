@@ -1,4 +1,5 @@
-enum ContentSdkError: Error {
+public enum ContentSdkError: Error {
     case newrorkError
-    case wrongConfig
+    case configError
+    case serverError(reason: String)
 }

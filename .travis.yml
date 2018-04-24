@@ -1,12 +1,33 @@
 osx_image: xcode9.3
 language: objective-c
-
 podfile: Example/Podfile
+xcode_workspace: ContentSDK
+
+env:
+  global:
+  - FRAMEWORK_NAME=GlomexContentSdk
+
 before_install:
-- gem install cocoapods # Since Travis is not always on latest version
+- gem install cocoapods
 - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GlomexContentSdk.xcworkspace -scheme GlomexContentSdk-Example -destination 'platform=iOS Simulator,name=iPhone 6s,OS=11.3' -sdk iphonesimulator11.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GlomexContentSdk.xcworkspace
+  -scheme GlomexContentSdk-Example -destination 'platform=iOS Simulator,name=iPhone
+  6s,OS=11.3' -sdk iphonesimulator11.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
 - swiftlint
+
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive $FRAMEWORK_NAME
+
+deploy:
+  provider: releases
+  api_key:
+    secure: uCIREMil+5L9Bs6QM3kb6Hop9E2xfwlgsgI7dwPT4NaFuyw4syIUQuZ78THl3XgYsyOjGYnxWBWBFZmZ31U65rYJ+u4edg8kN8WKXK9LHJxJiGoed4QiTuWBIQb4Y95JO4G49KdMYBennzSE9lKvuH2O3eXsYZmEXbKUhAcYZv1Uz5VAXGG3B8kRrMEjO+6jxyaMkF7nPQ8Dc/zIxY2gfyPXRTWpmhmJy/rlq6zfzpe4N9I7XTz2AMaO9yJUPyCoQvu38ur/WfZkaviztkgp6zdAVUuZmVg8H0U2lGyu3Vlj0h0X+V+Ecx2NUUHd5B1r1hiKMp8WSnymKvQVhWHrMwnD/+6dLYiOC+ILiBY7p2v25t9Pn2ZPsUzjxMTwLhi4Rg1rIQykbDS5IVosQdPkl3PR8ed/artJIa9OTPPtF/K0iwkQU9Gr2TlltfRYKp7WiFFDQnczonfibW9jMitIdBXTxjFgSu4h7OACsLlzPsbcp/fMvoj8D8NM0BL7JmxUvLcbu46uUiLT+rQgXipa0JctCd1zhMtSeFID4f+CrkwT/XlDxuHFBtezIc3uIRI0NZKSHIKr3vn1MBSBuKY0lil3d3d4vTpSXFSADx66IJXhNYUxUJPNwFUWXi1bOJEcvuF4CwQIxoybPUBT37NsbAQil496XdwYD1fyZVViR/w=
+  file: "$FRAMEWORK_NAME.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: glomex/content-sdk-ios
+    tags: true

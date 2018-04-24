@@ -7,7 +7,6 @@ import OHHTTPStubs
 class TableOfContentsSpec: QuickSpec {
     let config = ContentConfig(content_id: "", integration_id: "", page_url: "")
     override func spec() {
-
         afterEach {
            OHHTTPStubs.removeAllStubs()
         }
@@ -96,13 +95,13 @@ class TableOfContentsSpec: QuickSpec {
                     guard let name = desc.name, name == "tracking" else {
                         return
                     }
-                    if (request.httpMethod == "GET") {
+                    if request.httpMethod == "GET" {
                         getRequests += 1
                     } else {
                        postRequests += 1
                     }
                     totalRequest += 1
-                    if (totalRequest >= 2) {
+                    if totalRequest >= 2 {
                         expect(getRequests) == 1
                         expect(postRequests) == 1
                         expectation.fulfill()
@@ -137,13 +136,13 @@ class TableOfContentsSpec: QuickSpec {
                     guard let name = desc.name, name == "tracking" else {
                         return
                     }
-                    if (request.httpMethod == "GET") {
+                    if request.httpMethod == "GET" {
                         getRequests += 1
                     } else {
                         postRequests += 1
                     }
                     totalRequest += 1
-                    if (totalRequest >= 2) {
+                    if totalRequest >= 2 {
                         expect(getRequests) == 1
                         expect(postRequests) == 1
                         expectation.fulfill()

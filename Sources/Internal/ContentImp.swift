@@ -5,7 +5,7 @@ internal class ContentImp: Content {
     private let session: Session
 
     init?(_ video: Video) {
-        guard let _ = video.source else {
+        guard video.source != nil else {
             return nil
         }
         self.video = video

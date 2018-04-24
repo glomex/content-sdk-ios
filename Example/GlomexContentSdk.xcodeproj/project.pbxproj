@@ -26,10 +26,7 @@
 		6094B845C61E2FE0F3DADD1C /* Pods_GlomexContentSdk_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlomexContentSdk_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		723B04724F077506DEB7288F /* Pods-GlomexContentSdk_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlomexContentSdk_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlomexContentSdk_Tests/Pods-GlomexContentSdk_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		84938404EE579D11CF82D1E3 /* Pods-GlomexContentSdk_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlomexContentSdk_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlomexContentSdk_Example/Pods-GlomexContentSdk_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		84B9D3590E23DB6C46675B77 /* GlomexContentSdk.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GlomexContentSdk.podspec; path = ../GlomexContentSdk.podspec; sourceTree = "<group>"; };
-		C75A5825E620D15321D30AE7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DDA3125AD69C846169B21707 /* Pods-GlomexContentSdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlomexContentSdk_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlomexContentSdk_Example/Pods-GlomexContentSdk_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DDF70344921A76260A80F5F1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E328B0649143B45343600189 /* Pods-GlomexContentSdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlomexContentSdk_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlomexContentSdk_Tests/Pods-GlomexContentSdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EC3618719DD6D32836F1AD72 /* Pods_GlomexContentSdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlomexContentSdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,7 +57,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for GlomexContentSdk */,
 				607FACD11AFB9204008FA782 /* Products */,
 				12A05A1360A923DD9EBE0FAA /* Pods */,
@@ -96,16 +92,6 @@
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
-			isa = PBXGroup;
-			children = (
-				84B9D3590E23DB6C46675B77 /* GlomexContentSdk.podspec */,
-				DDF70344921A76260A80F5F1 /* README.md */,
-				C75A5825E620D15321D30AE7 /* LICENSE */,
-			);
-			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 		9AFB6FF167E349817324CE4C /* Frameworks */ = {

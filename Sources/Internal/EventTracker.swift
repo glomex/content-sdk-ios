@@ -52,7 +52,6 @@ internal class EventTracker {
         switch trackingCall.method.lowercased() {
         case "post":
             sendPostRequest(trackingCall, payload: payload)
-            break
         default:
             sendRegularRequest(trackingCall, payload: payload)
         }

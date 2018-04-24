@@ -33,13 +33,10 @@ class ViewController: UIViewController {
                 switch error {
                 case ContentSdkError.configError:
                     self?.debugTextArea.text = "configError"
-                    break
                 case ContentSdkError.newrorkError:
                     self?.debugTextArea.text = "newrorkError"
-                    break
                 case ContentSdkError.serverError(let reason):
                     self?.debugTextArea.text = "serverError: \(reason)"
-                    break
                 default:
                     break
                 }

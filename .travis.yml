@@ -10,13 +10,21 @@ env:
 before_install:
 - gem install cocoapods
 - pod install --project-directory=Example
+- pod install --project-directory=ContentSDK
 
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GlomexContentSdk.xcworkspace
+#Check code
+- swiftlint
+#Check podspec
+- pod lib lint
+#Unit tests
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace ContentSDK/ContentSDK.xcworkspace
+  -scheme ContentSDK -destination 'platform=iOS Simulator,name=iPhone
+  6s,OS=11.3' -sdk iphonesimulator11.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+#Build example
+- set -o pipefail && xcodebuild -workspace Example/GlomexContentSdk.xcworkspace
   -scheme GlomexContentSdk-Example -destination 'platform=iOS Simulator,name=iPhone
   6s,OS=11.3' -sdk iphonesimulator11.3 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
-- swiftlint
 
 before_deploy:
   - carthage build --no-skip-current

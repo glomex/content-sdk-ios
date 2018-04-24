@@ -1,5 +1,5 @@
 import UIKit
-import GlomexContentSdk
+import glomex
 
 class ViewController: UIViewController {
     @IBOutlet weak var debugTextArea: UITextView!

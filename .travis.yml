@@ -5,7 +5,7 @@ xcode_workspace: ContentSDK
 
 env:
   global:
-  - FRAMEWORK_NAME=GlomexContentSdk
+  - FRAMEWORK_NAME=ContentSdk
 
 before_install:
 - gem install cocoapods

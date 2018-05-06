@@ -21,11 +21,11 @@ pod 'glomex/content-sdk'
 ```
 
 ### Carthage
-Add `content-sdk` in your Cartfile.
+Add `ContentSdk` in your Cartfile.
 ```
 github "glomex/content-sdk"
 ```
-Run carthage to build the framework and drag the built content-sdk.framework into your Xcode project.
+Run carthage to build the framework and drag the built ContentSdk.framework into your Xcode project.
 
 ### Integration
 `ContentSdk.load()` is used to load content. `Content` is passed to `callback` if content loaded successfully or `error` will be return to handle negative result

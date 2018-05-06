@@ -1,0 +1,8 @@
+use_frameworks!
+
+target 'ContentSDKTests' do
+  pod 'Quick', :git => 'https://github.com/Quick/Quick.git'
+  pod 'Nimble'
+  pod 'OHHTTPStubs/Swift'
+  pod 'OHHTTPStubs'
+end

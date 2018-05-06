@@ -5,20 +5,62 @@
 [![License](https://img.shields.io/cocoapods/l/glomex.svg?style=flat)](http://cocoapods.org/pods/glomex)
 [![Platform](https://img.shields.io/cocoapods/p/glomex.svg?style=flat)](http://cocoapods.org/pods/glomex)
 
-## Example
+## Demo
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 
 ## Installation
-
+### Cocoapods
 Content SDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'glomex/content-sdk'
 ```
+
+### Carthage
+Add `content-sdk` in your Cartfile.
+```
+github "glomex/content-sdk"
+```
+Run carthage to build the framework and drag the built content-sdk.framework into your Xcode project.
+
+### Integration
+`ContentSdk.load()` is used to load content. `Content` is passed to `callback` if content loaded successfully or `error` will be return to handle negative result
+
+```swift
+import glomex
+
+var video: Content?
+var errorDescription: String?
+
+let config = ContentConfig(content_id: contentId, integration_id: integrationId, page_url: pageUrl)
+player.playWithURL(URL(string: url)!)
+
+ContentSdk.load(config: config) { [weak self] (content, error) in
+    if let error = error {
+        switch error {
+        case ContentSdkError.configError:
+            self?.errorDescription = "configError"
+        case ContentSdkError.newrorkError:
+            self?.errorDescription = "newrorkError"
+        case ContentSdkError.serverError(let reason):
+            self?.errorDescription = "serverError: \(reason)"
+        default:
+            break
+        }
+        return
+    }
+    self?.video = content
+}
+```
+`Content` is used to get sources by `content.getSources()`
+
+Track content events:
+- `content.trackContentBegin()` to track content beginning event
+- `content.trackAdBegin(adRollName: AdRollName.preroll)` to track ad beginning event by type
 
 ## Author
 

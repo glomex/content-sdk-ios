@@ -31,7 +31,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Xb-Ep-TlV">
                                 <rect key="frame" x="0.0" y="30" width="375" height="211"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="https://www.tz.de" placeholder="page_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEj-2W-uzG">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="http://glomex.com" placeholder="page_url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEj-2W-uzG">
                                         <rect key="frame" x="26" y="115" width="323" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DWR-fx-M5o"/>
@@ -40,7 +40,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="teaser-1mcujg5frj4oa0fv2" placeholder="integration_Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GOB-N3-WNz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="6hha243jgs1drmy" placeholder="integration_Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GOB-N3-WNz">
                                         <rect key="frame" x="26" y="66" width="323" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="kQQ-Wl-55z"/>
@@ -49,7 +49,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="v-bkjbsi6sv3m9" placeholder="content_Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hm-Wb-dKn">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="v-bdui4dz7vjq9" placeholder="content_Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hm-Wb-dKn">
                                         <rect key="frame" x="26" y="20" width="323" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="rUi-Dx-odA"/>
@@ -141,9 +141,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9c-14-B3z">
+                                <rect key="frame" x="243" y="316" width="102" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Y7e-Rg-CuH"/>
+                                    <constraint firstAttribute="width" constant="102" id="qZS-IJ-Dzj"/>
+                                </constraints>
+                                <state key="normal" title="Play HLS">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.5450980392" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playHLS:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N0a-uT-yOS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="x9c-14-B3z" secondAttribute="trailing" constant="14" id="1wE-bT-kQa"/>
                             <constraint firstItem="SAL-Ku-1p6" firstAttribute="top" secondItem="Syg-9A-c8l" secondAttribute="bottom" constant="27" id="7nS-ph-l2d"/>
                             <constraint firstItem="UVX-NB-41n" firstAttribute="top" secondItem="eJq-M1-kot" secondAttribute="bottom" constant="8" id="Cg3-hZ-qZ1"/>
                             <constraint firstAttribute="trailing" secondItem="eJq-M1-kot" secondAttribute="trailing" id="KtJ-Yy-UXc"/>
@@ -162,6 +176,7 @@
                             <constraint firstItem="onF-dg-fU5" firstAttribute="top" secondItem="2Xb-Ep-TlV" secondAttribute="bottom" constant="27" id="n3m-uc-NSy"/>
                             <constraint firstItem="F15-c8-3wH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sHm-S7-BYj"/>
                             <constraint firstItem="F15-c8-3wH" firstAttribute="top" secondItem="onF-dg-fU5" secondAttribute="bottom" constant="8" id="vrX-ad-J2G"/>
+                            <constraint firstItem="x9c-14-B3z" firstAttribute="top" secondItem="2Xb-Ep-TlV" secondAttribute="bottom" constant="75" id="zzb-eR-fFG"/>
                         </constraints>
                     </view>
                     <connections>

@@ -1,5 +1,7 @@
 import UIKit
 import glomex
+import AVKit
+import AVFoundation
 
 class ViewController: UIViewController {
     @IBOutlet weak var debugTextArea: UITextView!
@@ -46,10 +48,25 @@ class ViewController: UIViewController {
             self?.debugTextArea.text = "Valid config. Content Loaded"
         }
     }
+
     @IBAction func getSources(_ sender: Any) {
         self.debugTextArea.text = video?.getSources().debugDescription
     }
 
+    @IBAction func playHLS(_ sender: Any) {
+        guard let hlsURL = video?.getSources()["hls"] else {
+            self.debugTextArea.text = "No HLS stream in sources"
+            return
+        }
+        let videoURL = URL(string: hlsURL)
+        let player = AVPlayer(url: videoURL!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: false) {
+            playerViewController.player!.play()
+        }
+    }
+    
     @IBAction func trackContentBegin(_ sender: Any) {
         guard let video = video else {
             self.debugTextArea.text = "please load content"

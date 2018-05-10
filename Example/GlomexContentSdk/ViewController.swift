@@ -11,10 +11,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var integrationId: UITextField!
     @IBOutlet weak var contentId: UITextField!
     @IBOutlet weak var loadButton: UIButton!
-    
     @IBOutlet var contentApiButtons: [GradientButton]!
     var video: Content?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let bundle = Bundle(for: ContentSdk.self)
@@ -73,7 +72,7 @@ class ViewController: UIViewController {
             playerViewController.player!.play()
         }
     }
-    
+
     @IBAction func trackContentBegin(_ sender: Any) {
         guard let video = video else {
             self.debugTextArea.text = "please load content"

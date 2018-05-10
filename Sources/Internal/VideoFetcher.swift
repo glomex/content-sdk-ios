@@ -1,6 +1,6 @@
 
 internal class VideoFetcher {
-    private let serviceURL = "https://integration-sdk-eu-west-1.mes.glomex.cloud/video"
+    private static let serviceURL = "https://integration-sdk-eu-west-1.mes.glomex.cloud/video"
 
     class func fetchVideo(config: ContentConfig, completion: @escaping (Video?, Error?) -> Void) {
         guard let url = URL(string: "\(serviceURL)?\(config.getAsUrlParams())") else {

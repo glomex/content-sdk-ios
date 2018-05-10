@@ -1,4 +1,3 @@
-
 internal class VideoFetcher {
     internal static let serviceURL = "integration-sdk-eu-west-1.mes.glomex.cloud"
 

@@ -10,15 +10,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var pageUrl: UITextField!
     @IBOutlet weak var integrationId: UITextField!
     @IBOutlet weak var contentId: UITextField!
-
+    @IBOutlet weak var loadButton: UIButton!
+    
+    @IBOutlet var contentApiButtons: [GradientButton]!
     var video: Content?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let bundle = Bundle(for: ContentSdk.self)
         if let version = bundle.infoDictionary!["CFBundleShortVersionString"] as? String {
             versionLabel.text = "Version: \(version)"
         }
+        loadButton.layer.cornerRadius = 5
+        loadButton.layer.masksToBounds = true
     }
 
     @IBAction func loadVideo(_ sender: Any) {
@@ -31,6 +35,9 @@ class ViewController: UIViewController {
         let config = ContentConfig(content_id: contentId, integration_id: integrationId, page_url: pageUrl)
 
         ContentSdk.load(config: config) { [weak self] (content, error) in
+            self?.contentApiButtons.forEach({ (btn) in
+                btn.isEnabled = error == nil
+            })
             if let error = error {
                 switch error {
                 case ContentSdkError.configError:

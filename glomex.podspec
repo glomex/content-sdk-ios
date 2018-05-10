@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'glomex'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'This pod can be user for a Glomex Content SDK'
 
   s.description      = <<-DESC

@@ -12,6 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		E735D456209F931300F51632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E735D455209F931200F51632 /* Images.xcassets */; };
+		E7C846E220A47BDD008B598D /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C846E120A47BDD008B598D /* GradientButton.swift */; };
 		FDE9C95F3631AD146CE49B58 /* Pods_GlomexContentSdk_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3618719DD6D32836F1AD72 /* Pods_GlomexContentSdk_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		DDA3125AD69C846169B21707 /* Pods-GlomexContentSdk_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlomexContentSdk_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlomexContentSdk_Example/Pods-GlomexContentSdk_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E328B0649143B45343600189 /* Pods-GlomexContentSdk_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlomexContentSdk_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlomexContentSdk_Tests/Pods-GlomexContentSdk_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E735D455209F931200F51632 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E7C846E120A47BDD008B598D /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		EC3618719DD6D32836F1AD72 /* Pods_GlomexContentSdk_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlomexContentSdk_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				E735D455209F931200F51632 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				E7C846E120A47BDD008B598D /* GradientButton.swift */,
 			);
 			name = "Example for GlomexContentSdk";
 			path = GlomexContentSdk;
@@ -224,6 +227,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E7C846E220A47BDD008B598D /* GradientButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

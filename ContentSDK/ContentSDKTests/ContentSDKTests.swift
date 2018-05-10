@@ -13,7 +13,7 @@ class TableOfContentsSpec: QuickSpec {
 
         describe("ContentSDK load config") {
             it("with valid JSON returns correct value") {
-                stub(condition: isHost("integration-sdk-eu-west-1.dev.mes.glomex.cloud")) { _ in
+                stub(condition: isHost(VideoFetcher.serviceURL)) { _ in
                     let stubPath = OHPathForFile("Content.json", type(of: self))
                     return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                 }
@@ -27,7 +27,7 @@ class TableOfContentsSpec: QuickSpec {
             }
 
             it("with geoblocked JSON return error") {
-                stub(condition: isHost("integration-sdk-eu-west-1.dev.mes.glomex.cloud")) { _ in
+                stub(condition: isHost(VideoFetcher.serviceURL)) { _ in
                     let stubPath = OHPathForFile("GeoblockedContent.json", type(of: self))
                     return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                 }
@@ -43,7 +43,7 @@ class TableOfContentsSpec: QuickSpec {
 
             it("with network error return error") {
                 let notConnectedError = NSError(domain: NSURLErrorDomain, code: URLError.notConnectedToInternet.rawValue)
-                stub(condition: isHost("integration-sdk-eu-west-1.dev.mes.glomex.cloud")) { _ in
+                stub(condition: isHost(VideoFetcher.serviceURL)) { _ in
                     return OHHTTPStubsResponse(error: notConnectedError)
                 }
 
@@ -57,7 +57,7 @@ class TableOfContentsSpec: QuickSpec {
             }
 
             it("with incorrect config return error") {
-                stub(condition: isHost("integration-sdk-eu-west-1.dev.mes.glomex.cloud")) { _ in
+                stub(condition: isHost(VideoFetcher.serviceURL)) { _ in
                     let stubPath = OHPathForFile("WrongConfigContent.json", type(of: self))
                     return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                 }
@@ -74,7 +74,7 @@ class TableOfContentsSpec: QuickSpec {
 
         describe("ContentSDK trackContentBegin") {
             it("with valid JSON returns correct value") {
-                stub(condition: isHost("integration-sdk-eu-west-1.dev.mes.glomex.cloud")) { _ in
+                stub(condition: isHost(VideoFetcher.serviceURL)) { _ in
                     let stubPath = OHPathForFile("Content.json", type(of: self))
                     return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                 }
@@ -115,7 +115,7 @@ class TableOfContentsSpec: QuickSpec {
             }
 
             it("with valid JSON returns correct value") {
-                stub(condition: isHost("integration-sdk-eu-west-1.dev.mes.glomex.cloud")) { _ in
+                stub(condition: isHost(VideoFetcher.serviceURL)) { _ in
                     let stubPath = OHPathForFile("Content.json", type(of: self))
                     return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                 }
